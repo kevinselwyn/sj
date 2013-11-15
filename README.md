@@ -22,8 +22,8 @@ The value for `data-main` should be filename of your sj file.
 
 ##Support
 
-Google Chrome
-Firefox
-IE8+
-Safari
-Opera
+* Google Chrome
+* Firefox
+* IE8+
+* Safari
+* Opera
