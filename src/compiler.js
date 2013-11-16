@@ -21,36 +21,9 @@
     
             if (input.isFile()) {
                 return this.compileFile(inputLocation, outputLocation);
-            } else if (input.isDirectory()) {
-                return this.compileDir(inputLocation, outputLocation);
             } else {
-                return this.err("Input and output locations should both be files or directories.");
+                return this.err("Input and output locations should both be files.");
             }
-        },
-        compileDir: function (inputLocation, outputLocation) {
-            var files = {},
-                file = {},
-                input = {},
-                result = {};
-    
-            fs.mkdirSync(outputLocation);
-            files = fs.readdirSync(inputLocation);
-    
-            for (file in files) {
-                if (files.hasOwnProperty(file)) {
-                    input = fs.lstatSync(this.appendFileName(inputLocation, files[file]));
-                    if (input.isDirectory()) {
-                        this.compileDirectory(this.appendFileName(inputLocation, files[file]), this.appendFileName(outputLocation, files[file]));
-                    } else {
-                        result = this.compileFile(this.appendFileName(inputLocation, files[file]), this.appendFileName(outputLocation, files[file]));
-                        if (!result.ok) {
-                            return result;
-                        }
-                    }
-                }
-            }
-    
-            return this.ok();
         },
         compileCode: function (code) {
             return code.toString().split("").reverse().join("");
