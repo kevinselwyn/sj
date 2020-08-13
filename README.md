@@ -1,8 +1,8 @@
-#sj
+# sj
 
 sj is an obfuscated JavaScript file format
 
-##Compiler
+## Compiler
 
 A sj Node compiler is included in this project. It converts ordinary js files to sj files for use in the browser:
 
@@ -10,7 +10,7 @@ A sj Node compiler is included in this project. It converts ordinary js files to
 node src/compiler.js input.js output.sj
 ```
 
-##Decoder
+## Decoder
 
 After you have compiled your sj file, you can include it in your HTML project:
 
@@ -20,7 +20,7 @@ After you have compiled your sj file, you can include it in your HTML project:
 
 The value for `data-main` should be filename of your sj file.
 
-##Support
+## Support
 
 * Google Chrome
 * Firefox
